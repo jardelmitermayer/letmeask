@@ -13,6 +13,8 @@ export function Home () {
 
   const history = useHistory();
   const { user , signInWithGoogle} = useAuth();
+
+  
   async function handleCreateRoom() {
     if(!user){
       await signInWithGoogle();
