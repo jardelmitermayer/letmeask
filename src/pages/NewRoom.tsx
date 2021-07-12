@@ -12,8 +12,9 @@ import { database } from '../services/firebase';
 export function NewRoom() {
   const { user } = useAuth();
 
-  const [newRoom, setNewRoom] = useState('');
-  const history = useHistory();
+  const [newRoom, setNewRoom] = useState('');  
+  const history = useHistory();  
+
   async function handleCreateRoom(event: FormEvent) {
     event.preventDefault();
 
