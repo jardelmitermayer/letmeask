@@ -4,7 +4,7 @@ import '../styles/roomCode.scss';
 
 type RoomCodeProps = {
   code: string;
-} 
+}
 
 export function RoomCode(props: RoomCodeProps) {
   function copyRoomCodeToClipboard() {

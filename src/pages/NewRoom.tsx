@@ -12,8 +12,8 @@ import { database } from '../services/firebase';
 export function NewRoom() {
   const { user } = useAuth();
 
-  const [newRoom, setNewRoom] = useState('');  
-  const history = useHistory();  
+  const [newRoom, setNewRoom] = useState('');
+  const history = useHistory();
 
   async function handleCreateRoom(event: FormEvent) {
     event.preventDefault();
@@ -25,7 +25,7 @@ export function NewRoom() {
     const roomRef = database.ref('rooms');
 
     const firebaseRoom = await roomRef.push({
-      title: newRoom, 
+      title: newRoom,
       authorId: user?.id,
     });
 
@@ -45,9 +45,9 @@ export function NewRoom() {
           <h2>Criar uma nova sala</h2>
           <form onSubmit={handleCreateRoom}>
             <input type="text"
-              placeholder="Nome da sala"           
+              placeholder="Nome da sala"
               value={newRoom}
-              onChange={event => setNewRoom(event.target.value)} 
+              onChange={event => setNewRoom(event.target.value)}
             />
             <Button type="submit">
               Criar na sala

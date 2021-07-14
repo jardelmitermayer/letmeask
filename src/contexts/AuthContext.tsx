@@ -19,7 +19,7 @@ type AuthContextProviderProps = {
   children: ReactNode;
 }
 
-export function AuthContextProvider (props: AuthContextProviderProps) {
+export function AuthContextProvider(props: AuthContextProviderProps) {
 
   const [user, setUser] = useState<User>();
 
@@ -39,7 +39,7 @@ export function AuthContextProvider (props: AuthContextProviderProps) {
         })
       }
     })
- 
+
     return () => {
       unsubscribe();
     }
@@ -66,6 +66,6 @@ export function AuthContextProvider (props: AuthContextProviderProps) {
   return (
     <AuthContext.Provider value={{ user, signInWithGoogle }}>
       {props.children}
-    </AuthContext.Provider>  
+    </AuthContext.Provider>
   );
 }
