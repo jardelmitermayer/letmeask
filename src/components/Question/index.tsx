@@ -1,12 +1,11 @@
+import './styles.scss';
+
 type QuestionProps = {
-  id: string;
   author: {
     name: string;
     avatar: string;
   }
   content: string;
-  isAnswered: boolean;
-  isHighligted: boolean;
 }
 
 export function Question ({
