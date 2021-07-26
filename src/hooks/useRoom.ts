@@ -12,7 +12,6 @@ type QuestionType = {
   isHighligted: boolean;
 }
 
-
 type FirebaseQuestions = Record<string, {
   author: {
     name: string;
@@ -23,11 +22,11 @@ type FirebaseQuestions = Record<string, {
   isHighligted: boolean;
 }>
 
-export function useRoom (roomId: string) {
+export function useRoom(roomId: string) {
   const [questions, setQuestions] = useState<QuestionType[]>([]);
-  
+
   const [title, setTitle] = useState('');
-  
+
   useEffect(() => {
     const roomRef = database.ref(`rooms/${roomId}`);
 
@@ -49,5 +48,5 @@ export function useRoom (roomId: string) {
     })
   }, [roomId]);
 
-  return { questions, title}
+  return { questions, title }
 }
